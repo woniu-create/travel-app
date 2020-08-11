@@ -1,40 +1,22 @@
 <template>
 <div>
-<<<<<<< HEAD
-<home-header :city="city"></home-header>
-<home-swiper :list="swiperList"></home-swiper>
-<home-icon :list="iconList"></home-icon>
-<home-recommend :list="recommendList"></home-recommend>
-<home-weekend :list="weekendList"></home-weekend>
-<<<<<<< HEAD
-=======
-=======
-<home-header :city="city"></home-header>
-<home-swiper :list="swiperList"></home-swiper>
-<home-icon :list="iconList"></home-icon>
-<home-recommend :list="recommendList"></home-recommend>
-<home-weekend :list="weekendList"></home-weekend>
->>>>>>> index-ajax
 
->>>>>>> index-recommend
+<home-header :city="city"></home-header>
+<home-swiper :list="swiperList"></home-swiper>
+<home-icon :list="iconList"></home-icon>
+<home-recommend :list="recommendList"></home-recommend>
+<home-weekend :list="weekendList"></home-weekend>
+
 </div>
 </template>
 <script>
 import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcon from './components/Icon'
-<<<<<<< HEAD
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
-<<<<<<< HEAD
-=======
-import HomeRecommend from './components/Recommend'
-import HomeWeekend from './components/Weekend'
->>>>>>> index-recommend
-=======
-import HomeRecommend from './components/recommend'
+
 import axios from 'axios'
->>>>>>> index-ajax
 export default {
   name: 'Home',
   components:{
@@ -42,14 +24,8 @@ export default {
       HomeSwiper,
       HomeIcon,
       HomeRecommend,
-<<<<<<< HEAD
       HomeWeekend,
-=======
       HomeWeekend,
-<<<<<<< HEAD
-      
->>>>>>> index-recommend
-=======
   },
   data(){
     return{
@@ -80,7 +56,6 @@ export default {
   },
   mounted(){
     this.getHomeInfo()
->>>>>>> index-ajax
   }
 }
 </script>
