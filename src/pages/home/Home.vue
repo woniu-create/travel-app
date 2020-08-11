@@ -1,12 +1,20 @@
 <template>
 <div>
-<home-header></home-header>
-<home-swiper></home-swiper>
-<home-icon></home-icon>
-<home-recommend></home-recommend>
-<home-weekend></home-weekend>
+<<<<<<< HEAD
+<home-header :city="city"></home-header>
+<home-swiper :list="swiperList"></home-swiper>
+<home-icon :list="iconList"></home-icon>
+<home-recommend :list="recommendList"></home-recommend>
+<home-weekend :list="weekendList"></home-weekend>
 <<<<<<< HEAD
 =======
+=======
+<home-header :city="city"></home-header>
+<home-swiper :list="swiperList"></home-swiper>
+<home-icon :list="iconList"></home-icon>
+<home-recommend :list="recommendList"></home-recommend>
+<home-weekend :list="weekendList"></home-weekend>
+>>>>>>> index-ajax
 
 >>>>>>> index-recommend
 </div>
@@ -18,10 +26,15 @@ import HomeIcon from './components/Icon'
 <<<<<<< HEAD
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
+<<<<<<< HEAD
 =======
-import HomeWeekend from './components/Weekend'
 import HomeRecommend from './components/Recommend'
+import HomeWeekend from './components/Weekend'
 >>>>>>> index-recommend
+=======
+import HomeRecommend from './components/recommend'
+import axios from 'axios'
+>>>>>>> index-ajax
 export default {
   name: 'Home',
   components:{
@@ -33,8 +46,41 @@ export default {
       HomeWeekend,
 =======
       HomeWeekend,
+<<<<<<< HEAD
       
 >>>>>>> index-recommend
+=======
+  },
+  data(){
+    return{
+      city:'',
+      swiperList:[],
+      iconList:[],
+      recommendList:[],
+      weekendList:[]
+    } 
+  },
+  methods:{
+    getHomeInfo(){
+      axios.get('/api/index.json')
+        .then(this.getHomeInfoSucc)
+    },
+    getHomeInfoSucc(res){
+      res=res.data
+      console.log(res)
+      if(res.ret&&res.data){
+        const data=res.data
+        this.city=data.city
+        this.swiperList=data.swiperList
+        this.iconList=data.iconList
+        this.recommendList=data.recommendList
+        this.weekendList=data.weekendList
+      }
+    }
+  },
+  mounted(){
+    this.getHomeInfo()
+>>>>>>> index-ajax
   }
 }
 </script>
