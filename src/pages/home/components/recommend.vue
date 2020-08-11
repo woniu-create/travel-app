@@ -2,7 +2,7 @@
 <div>
     <div class="title">热销推荐</div>
     <ul>
-        <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+        <li class="item border-bottom" v-for="item of list" :key="item.id">
             <img class="item-img" :src='item.imgUrl' alt="">
             <div class="item-info">
                 <p class="item-title">{{item.title}}</p>
@@ -16,40 +16,8 @@
 <script>
 export default{
     name:'HomeRecommend',
-    data(){
-        return {
-recommendList:[{
-            id:'0001',
-            imgUrl:'//tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/fd16ccffb2e2376ff370bda3bebebd71.jpg',
-            title:'探访日本，一部家庭旅行画册',
-            desc:'探访日本，一部家庭旅行画册'
-        },
-        {
-            id:'0002',
-            imgUrl:'//tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/fd16ccffb2e2376ff370bda3bebebd71.jpg',
-            title:'探访日本，一部家庭旅行画册',
-            desc:'探访日本，一部家庭旅行画册'
-        },
-        {
-            id:'0003',
-            imgUrl:'//tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/fd16ccffb2e2376ff370bda3bebebd71.jpg',
-            title:'探访日本，一部家庭旅行画册',
-            desc:'探访日本，一部家庭旅行画册'
-        },
-        {
-            id:'0004',
-            imgUrl:'//tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/fd16ccffb2e2376ff370bda3bebebd71.jpg',
-            title:'探访日本，一部家庭旅行画册',
-            desc:'探访日本，一部家庭旅行画册'
-        },
-        {
-            id:'0005',
-            imgUrl:'//tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/fd16ccffb2e2376ff370bda3bebebd71.jpg',
-            title:'探访日本，一部家庭旅行画册',
-            desc:'探访日本，一部家庭旅行画册'
-        }
-        ]
-        }
+    props:{
+        list:Array
     }
 }
 </script>

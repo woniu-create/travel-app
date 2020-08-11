@@ -8,14 +8,17 @@
        输入要搜索的城市
     </div>
    <div class="header-right">
-    城市
+    {{this.city}}
     <span class="iconfont arrow-icon">&#xe64a;</span>  
     </div>
 </div>
 </template>
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props:{
+    city:String
+  }
 }
 </script>
 <style lang="stylus" scoped>
