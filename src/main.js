@@ -7,6 +7,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 // import 'swiper/css/swiper.css'
 import 'vue-awesome-swiper/node_modules/swiper/dist/css/swiper.css'
 // import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import store from './store'
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
@@ -20,6 +21,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
