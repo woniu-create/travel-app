@@ -1,29 +1,36 @@
 <template>
 <div>
     <div class="banner" @click="handleBannerClick">
-        <img class="banner-img" src="//img1.qunarzz.com/sight/p0/2003/97/97936710f378de81a3.water.jpg_600x330_f6abb22f.jpg"/>
+        <img class="banner-img" :src="bannerImg"/>
         <div class="banner-info">
-            <div class="banner-title">西樵山国艺影视城</div>
+            <div class="banner-title">{{this.sightName}}</div>
             <div class="banner-number">
                 <span class="iconfont banner-icon">&#xe635;</span> 
-                4</div>
+                {{this.bannerImgs.length}}</div>
         </div>
     </div>
-    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
+    <fade-animation>
+    <common-gallary
+     :imgs="bannerImgs"  
+     v-show="showGallary"
+     @close="handleGallaryClose">
+    </common-gallary>
+    </fade-animation>
 </div>
 </template>
 <script>
 import CommonGallary from 'common/gallary/Gallary'
+import FadeAnimation from 'common/fade/FadeAnimation'
 export default{
     name:'DetailBanner',
+    props:{
+    sightName:String,
+     bannerImg:String,
+     bannerImgs:Array
+    },
         data(){
         return{
             showGallary:false,
-        imgs:[ "//img1.qunarzz.com/sight/p0/2003/97/97936710f378de81a3.water.jpg_600x330_f6abb22f.jpg",
-              'http://img1.qunarzz.com/sight/p0/1510/8e/8eea8eb6f41698290.img.jpg_r_800x800_83a5fe3a.jpg',
-              'http://img1.qunarzz.com/sight/p0/1510/ca/ca60a080020329ef90.img.jpg_350x240_9ff2208e.jpg',
-              'http://img1.qunarzz.com/sight/p0/1510/cc/ccafbdaac21bdbf790.img.jpg_350x240_c35f8451.jpg'                
-                ]
         }
     },
     methods:{
@@ -35,7 +42,8 @@ export default{
         }
     },
     components:{
-        CommonGallary
+        CommonGallary,
+        FadeAnimation
     }
 }
 </script>
