@@ -1,4 +1,6 @@
 # travel
+演示如下:
+![image](https://github.com/woniu-create/travel-app/blob/master/images/travel.gif)
 
 > A Vue.js project
 
