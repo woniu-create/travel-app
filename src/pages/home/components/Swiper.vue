@@ -18,7 +18,12 @@
       return {
         swiperOptions: {
          pagination:'.swiper-pagination',
-         loop:true
+         loop:true,
+         speed: 1000,
+         autoplay:2000,
+         paginationClickable: true,//点击切换
+         autoplayDisableOnInteraction:false,
+         preventLinksPropagation:true
         },
         swiperList:[{
             id:'0001',
@@ -42,6 +47,6 @@
 <style lang="stylus" scoped> 
    .swiper-img
      width: 100% 
-     height: 130px
+     height: 120px
 
 </style>
