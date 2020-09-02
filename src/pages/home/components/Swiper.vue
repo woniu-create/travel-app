@@ -26,7 +26,7 @@
          autoplay:2000,
          paginationClickable: true,//点击切换
          autoplayDisableOnInteraction:false,
-         preventLinksPropagation:true
+         preventLinksPropagation:true,
         },
       }
     },
